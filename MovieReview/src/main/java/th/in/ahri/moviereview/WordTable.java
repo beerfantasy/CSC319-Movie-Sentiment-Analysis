@@ -5,15 +5,15 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * HashTable
+ * WordTable
  *
  * @author Jittapan
  */
-public class HashTable {
+public class WordTable {
     private List<WordEntry> wordEntries;
     private static final WordEntry DEFAULT_SCORE = new WordEntry(null, 2);
 
-    public HashTable(int s) {
+    public WordTable(int s) {
         wordEntries = new ArrayList<>(s);
     }
 

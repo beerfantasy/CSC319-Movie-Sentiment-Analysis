@@ -16,7 +16,7 @@ import java.util.StringTokenizer;
 public class Driver {
 
     private static final List<String> IGNORE_LIST = Arrays.asList("'s", ",", ".", "--");
-    private static HashTable hashTable = new HashTable(2000);
+    private static WordTable wordTable = new WordTable(2000);
 
     public static void main(String[] args) {
         try {
@@ -29,7 +29,7 @@ public class Driver {
                 while(tokenizer.hasMoreTokens()) {
                     token = tokenizer.nextToken().trim();
                     if(!IGNORE_LIST.contains(token)) {
-                        hashTable.put(token, score);
+                        wordTable.put(token, score);
                     }
                 }
             }
@@ -61,7 +61,7 @@ public class Driver {
         while(tokenizer.hasMoreTokens()) {
             String token = tokenizer.nextToken();
             if(!IGNORE_LIST.contains(token)) {
-                totalScore += hashTable.getAverage(token);
+                totalScore += wordTable.getAverage(token);
                 ++wordCount;
             }
         }
