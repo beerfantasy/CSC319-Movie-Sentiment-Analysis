@@ -11,6 +11,7 @@ import java.util.Optional;
  */
 public class HashTable {
     private List<WordEntry> wordEntries;
+    private static final WordEntry DEFAULT_SCORE = new WordEntry(null, 2);
 
     public HashTable(int s) {
         wordEntries = new ArrayList<>(s);
@@ -26,7 +27,7 @@ public class HashTable {
     }
 
     public double getAverage(String s) {
-        WordEntry wordEntry = wordEntries.stream().filter((e) -> e.getWord().equals(s)).findFirst().orElse(new WordEntry(null, 2));
+        WordEntry wordEntry = wordEntries.stream().filter((e) -> e.getWord().equals(s)).findFirst().orElse(DEFAULT_SCORE);
         return wordEntry.getAverage();
     }
 }
