@@ -21,6 +21,22 @@ public class WordEntry {
         totalScore += s;
     }
 
+    public int getNumAppearance() {
+        return numAppearance;
+    }
+
+    public void setNumAppearance(int numAppearance) {
+        this.numAppearance = numAppearance;
+    }
+
+    public int getTotalScore() {
+        return totalScore;
+    }
+
+    public void setTotalScore(int totalScore) {
+        this.totalScore = totalScore;
+    }
+
     public String getWord() {
         return text;
     }
